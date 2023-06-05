@@ -1,0 +1,29 @@
+{
+  "name": "back-end-horror",
+  "version": "1.0.0",
+  "description": "The back-end of a text-based horror game.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ThalVal/Project3-Gamers.git"
+  },
+  "author": "ChickenChamp71, kiriludp, ThalVal, natashamalhan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ThalVal/Project3-Gamers/issues"
+  },
+  "homepage": "https://github.com/ThalVal/Project3-Gamers#readme",
+  "dependencies": {
+    "bcrypt": "^5.1.0",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.3.3",
+    "sequelize": "^6.32.0"
+  }
+}
