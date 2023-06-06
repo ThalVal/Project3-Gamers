@@ -1,49 +1,39 @@
 const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
-class User extends Model {}
+class Item extends Model {}
 
-User.init(
+Item.init(
     {
-        user_id: {
+        item_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
             autoIncrement: true,
         },
-        email: {
+        item_name: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
-            validate: {
-                isEmail: true,
-            }
         },
-        username: {
+        item_type: {
             type: DataTypes.STRING,
             allowNull: false,
-            unique: true,
         },
-        password: {
+        item_use_id: {
             type: DataTypes.STRING,
-            allowNull: false,
-            validate: {
-                len: [8],
+            references: {
+                model: 'item_use',
+                key: 'item_use_id',
             },
         },
     },
     {
         sequelize,
-        hooks: {
-            beforeCreate: userObj => {
-                userObj.password = bcrypt.hashSync(userObj.password, 5);
-            }
-        },
         timestamps: false,
         freezeTableName: true,
         underscored: true,
-        modelName: 'user',
+        modelName: 'item',
     }
 );
 
-module.exports = User;
+module.exports = Item;

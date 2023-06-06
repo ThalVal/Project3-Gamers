@@ -6,13 +6,13 @@ const SaveData = require('./SaveData');
 const StartLocation = require('./StartLocation');
 const User = require('./User');
 
-SaveData.belongsTo(User, {
-    foreignKey: 'save_data_id',
-});
+// SaveData.belongsTo(User, {
+//     foreignKey: 'save_data_id',
+// });
 
-Map.hasMany(Room, {
-    foreignKey: 'room_id',
-    onDelete: 'CASCADE',
-});
+// Map.hasMany(Room, {
+//     foreignKey: 'room_id',
+//     onDelete: 'CASCADE',
+// });
 
 // User.hasMany(Item, )
