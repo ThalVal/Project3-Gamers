@@ -27,20 +27,20 @@ Room.init(
                 key: 'item_id',
             },
         },
-        event_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'event',
-                key: 'event_id',
-            },
-        },
-        ending_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'ending',
-                key: 'ending_id',
-            },
-        },
+        // event_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'event',
+        //         key: 'event_id',
+        //     },
+        // },
+        // ending_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'ending',
+        //         key: 'ending_id',
+        //     },
+        // },
     },
     {
         sequelize,
