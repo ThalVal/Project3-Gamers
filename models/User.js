@@ -5,7 +5,7 @@ class User extends Model {}
 
 User.init(
     {
-        user_id: {
+        id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             primaryKey: true,
@@ -29,6 +29,13 @@ User.init(
             allowNull: false,
             validate: {
                 len: [8],
+            },
+        },
+        ending_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'ending',
+                id: 'id',
             },
         },
     },

@@ -20,13 +20,13 @@ Room.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        item_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'item',
-                key: 'item_id',
-            },
-        },
+        // item_id: {
+        //     type: DataTypes.INTEGER,
+        //     references: {
+        //         model: 'item',
+        //         key: 'item_id',
+        //     },
+        // },
         // event_id: {
         //     type: DataTypes.INTEGER,
         //     references: {

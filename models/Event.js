@@ -19,13 +19,6 @@ Event.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        event_use_id: {
-            type: DataTypes.STRING,
-            references: {
-                model: 'event_use',
-                key: 'event_use_id',
-            },
-        },
     },
     {
         sequelize,

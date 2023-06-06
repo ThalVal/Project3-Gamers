@@ -5,6 +5,7 @@ const Room = require('./Room');
 const SaveData = require('./SaveData');
 const StartLocation = require('./StartLocation');
 const User = require('./User');
+const Ending = require('./Ending');
 
 // SaveData.belongsTo(User, {
 //     foreignKey: 'save_data_id',
@@ -15,4 +16,8 @@ const User = require('./User');
 //     onDelete: 'CASCADE',
 // });
 
-// User.hasMany(Item, )
+User.hasMany(Ending, {
+    model: 'ending',
+    key: 'id',
+});
+// Ending.hasMany(User);
