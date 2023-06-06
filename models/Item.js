@@ -19,13 +19,13 @@ Item.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        item_use_id: {
-            type: DataTypes.STRING,
-            references: {
-                model: 'item_use',
-                key: 'item_use_id',
-            },
-        },
+        // item_use_id: {
+        //     type: DataTypes.STRING,
+        //     references: {
+        //         model: 'item_use',
+        //         key: 'item_use_id',
+        //     },
+        // },
     },
     {
         sequelize,
