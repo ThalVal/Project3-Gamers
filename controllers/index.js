@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
-const userController = require('./userController');
 
-router.get('/user', userController);
+const userRoutes = require("./userController");
+router.use("/api/users",userRoutes)
 
 module.exports = router;
