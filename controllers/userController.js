@@ -6,6 +6,15 @@ const jwt = require("jsonwebtoken");
 
 
 
+router.get('/', (req, res) => {
+    try {
+        const userData = User.findAll();
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+});
+
 router.post("/login",(req,res)=>{
     //TODO: sign jwt
     User.findOne({
