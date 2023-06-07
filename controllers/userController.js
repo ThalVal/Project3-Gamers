@@ -48,9 +48,9 @@ router.post("/login",(req,res)=>{
 router.post("/signup",(req,res)=>{
     //TODO:create user, sign jw
     User.create({
-        
+        email:req.body.email,
         username:req.body.username,
-        password:req.body.password
+        password:req.body.password,
     }).then(newser=>{
         const token = jwt.sign({
             username:newser.username,
