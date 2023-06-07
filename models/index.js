@@ -9,8 +9,7 @@ const User = require('./User');
 const Ending = require('./Ending');
 
 
-// User.hasMany(Ending, {
-//     model: 'ending',
-//     key: 'id',
-// });
-
+User.hasMany(Ending, {
+    model: 'ending',
+    key: 'id',
+});

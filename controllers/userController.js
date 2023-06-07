@@ -36,7 +36,7 @@ router.post("/login",(req,res)=>{
     })
 })
 
-router.post("/Signup",(req,res)=>{
+router.post("/signup",(req,res)=>{
     //TODO:create user, sign jw
     User.create({
         
