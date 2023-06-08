@@ -1,16 +1,16 @@
 const express = require('express');
 const router = express.Router();
-const { User } = require('../models');
+// const { User } = require('../models');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-
+const User = require('../models/User')
 
 
 router.post("/login",(req,res)=>{
     //TODO: sign jwt
     User.findOne({
         where:{
-            username:req.body.username
+            username: req.body.username
         }
     }).then(foundUser=>{
         if(!foundUser){
@@ -18,16 +18,15 @@ router.post("/login",(req,res)=>{
         } else if(!bcrypt.compareSync(req.body.password,foundUser.password)){
             return res.status(401).json({msg:"invalid credentials"})
         } else {
-            const token = jwt.sign({
-                username:foundUser.username,
-                userId:foundUser.id
-            },process.env.JWT_SECRET,{
-                expiresIn:"2h"
-            })
-            console.log(token);
+            // const token = jwt.sign({
+            //     username:foundUser.username,
+            //     userId:foundUser.id
+            // },process.env.JWT_SECRET,{
+            //     expiresIn:"2h"
+            // })
+            // console.log(token);
            return res.json({
-            token:token,
-            user:foundUser
+            foundUser
            })
         }
     }).catch(err=>{
@@ -39,19 +38,18 @@ router.post("/login",(req,res)=>{
 router.post("/signup",(req,res)=>{
     //TODO:create user, sign jw
     User.create({
-        email:req.body.email,
+        // email:req.body.email,
         username:req.body.username,
         password:req.body.password,
     }).then(newser=>{
-        const token = jwt.sign({
-            username:newser.username,
-            userId:newser.id
-        },process.env.JWT_SECRET,{
-            expiresIn:"2h"
-        })
+        // const token = jwt.sign({
+        //     username:newser.username,
+        //     userId:newser.id
+        // },process.env.JWT_SECRET,{
+        //     expiresIn:"2h"
+        // })
         res.json({
-            token,
-            user:newser
+           newser
         })
     }).catch(err=>{
         console.log(err);
