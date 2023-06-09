@@ -45,13 +45,14 @@ router.post("/login",(req,res)=>{
     })
 })
 
-router.post("/signup",(req,res)=>{
+router.post("/signup", (req, res) => {
+    console.info(req.body);
     //TODO:create user, sign jw
     User.create({
-        email:req.body.email,
-        username:req.body.username,
-        password:req.body.password,
-    }).then(newser=>{
+        email: req.body.email,
+        username: req.body.username,
+        password: req.body.password,
+    }).then((newser) => {
         const token = jwt.sign({
             username:newser.username,
             userId:newser.id
