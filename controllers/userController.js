@@ -8,12 +8,20 @@ const jwt = require("jsonwebtoken");
 router.get('/', async (req, res) => {
     try {
         const userData = await User.findAll();
-        console.info(userData);
         res.status(200).json(userData);
     } catch (err) {
         res.status(500).json(err);
     }
 });
+
+router.get('/:id', async (req, res) => {
+    try {
+        const userData = await User.findByPk(req.params.id);
+        res.status(200).json(userData);
+    } catch (err) {
+        res.status(500).json(err);
+    }
+})
 
 router.post("/login",(req,res)=>{
     //TODO: sign jwt
@@ -58,9 +66,7 @@ router.post("/signup", (req, res) => {
         // },process.env.JWT_SECRET,{
         //     expiresIn:"2h"
         // })
-        res.json({
-           newser
-        })
+        res.status(200).json(newser);
     }).catch(err=>{
         console.log(err);
         res.status(500).json({msg:"an error",err})
