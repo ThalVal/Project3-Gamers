@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
-// const { User } = require('../models');
+const User = require('../models/User');
+const Ending = require('../models/Ending');
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const User = require('../models/User')
 
-router.get('/', (req, res) => {
+router.get('/', async (req, res) => {
     try {
-        const userData = User.findAll();
+        const userData = await User.findAll();
+        console.info(userData);
         res.status(200).json(userData);
     } catch (err) {
         res.status(500).json(err);

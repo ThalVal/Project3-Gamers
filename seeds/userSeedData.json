@@ -1,23 +1,17 @@
 [
     {
-        "id": 1,
-        "email": "chickensandsharks@gmail.com",
         "username": "ChickenChamp71",
         "password": "password",
-        "ending_id":2
+        "ending_id":[2]
     },
     {
-        "id": 2,
-        "email": "joe@joe.joe",
         "username": "joetime",
         "password": "password",
-        "ending_id": 1
+        "ending_id": [1]
     },
     {
-        "id": 3,
-        "email": "tom@marvolo.riddle",
         "username": "LordVoldemort",
         "password": "password",
-        "ending_id": 1
+        "ending_id": [1]
     }
 ]

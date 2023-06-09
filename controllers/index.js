@@ -1,8 +1,12 @@
 const express = require('express');
 const router = express.Router();
 
+const endingRoutes = require('./endingController');
 const userRoutes = require("./userController");
-router.use("/api/users", userRoutes);
+
+router.use('/api/endings', endingRoutes);
+router.use('/api/users', userRoutes);
+
 
 router.get('/', (req, res) => {
     try {

@@ -12,14 +12,6 @@ User.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        // email: {
-        //     type: DataTypes.STRING,
-        //     allowNull: false,
-        //     unique: true,
-        //     validate: {
-        //         isEmail: true,
-        //     }
-        // },
         username: {
             type: DataTypes.STRING,
             allowNull: false,
@@ -48,6 +40,9 @@ User.init(
                 return userObj
             }
         },
+        timestamps: false,
+        freezeTableName: true,
+        underscored: true,
         
     }
 );
