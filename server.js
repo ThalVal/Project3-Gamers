@@ -10,7 +10,7 @@ const PORT = process.env.PORT || 3001;
 app.use(cors({
     "origin": ["https://theyrecomingtogetyou.netlify.app/"],
     "methods": ["GET", "POST", "PUT", "DELETE"],
-    "responseHeader": ["Content-Type"],
+    "allowedHeaders": ['Content-Type'],
     "maxAgeSeconds": 3600
 }));
 
