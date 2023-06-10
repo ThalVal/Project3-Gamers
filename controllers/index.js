@@ -1,8 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
+const endingRoutes = require('./endingController');
 const userRoutes = require("./userController");
-router.use("/api/users", userRoutes);
+const tokenRoutes = require('./tokenController');
+
+router.use('/api/endings', endingRoutes);
+router.use('/api/users', userRoutes);
+router.use('/verifytoken', tokenRoutes);
+
 
 router.get('/', (req, res) => {
     try {
